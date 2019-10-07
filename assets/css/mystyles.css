@@ -23,10 +23,10 @@ header section :first-child,:last-child {
   display: block;
   border: 1px solid black;
   margin: 0 1em;
-  padding: 0.5em;
+  padding: 0.5em 0.5em 0em 0.5em;
 }
 
 .robot-list img {
-  width: 150px;
-  height: 150px;
+  max-width: 150px;
+  max-height: 150px;
 }
