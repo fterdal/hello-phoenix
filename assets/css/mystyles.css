@@ -1,0 +1,15 @@
+.top-nav-ul {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.top-nav-ul li {
+  margin: 0 1em;
+  display: block;
+}
+
+/* Overrides the styles in phoenix.css */
+header section :first-child,:last-child {
+  order: inherit;
+}
