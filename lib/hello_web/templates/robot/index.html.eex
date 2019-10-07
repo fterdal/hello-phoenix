@@ -1,1 +1,22 @@
-<h1>Listing Robots</h1>
+<h1>All Robots</h1>
+<ul class="robot-list">
+    <%= for robot <- @robots do %>
+      <li>
+        <div><%= robot.name %></div>
+        <img src="<%= robot.image_url %>" />
+      </li>
+    <% end %>
+</ul>
+
+<script>
+  var robots = [
+    <%= for robot <- @robots do %>
+      {
+        name: "<%= robot.name %>",
+        imageUrl: "<%= robot.image_url %>",
+        fuelLevel: <%= robot.fuel_level %>,
+      },
+    <% end %>
+  ]
+  console.log(robots)
+</script>

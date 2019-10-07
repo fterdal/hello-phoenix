@@ -13,3 +13,20 @@
 header section :first-child,:last-child {
   order: inherit;
 }
+
+.robot-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.robot-list li {
+  display: block;
+  border: 1px solid black;
+  margin: 0 1em;
+  padding: 0.5em;
+}
+
+.robot-list img {
+  width: 150px;
+  height: 150px;
+}
