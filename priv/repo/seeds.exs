@@ -9,26 +9,24 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
-# defmodule Hello.DatabaseSeeder do
 
-alias Hello.Repo
-alias Hello.Robots.Robot
+defmodule Hello.DatabaseSeeder do
+  alias Hello.Repo
+  alias Hello.Robots
 
-# @name_list ["Finn", "Ryan", "Priti", "Collin"]
-# @fuel_level_list [21, 43, 76, 87]
-name_list = ["Finn", "Ryan", "Priti", "Collin"]
-fuel_level_list = [21, 43, 76, 87]
+  @robot_names [
+    "Finn",
+    "Ryan",
+    "Collin",
+    "Priti",
+    "Holly"
+  ]
 
-# Repo.delete_all()
-# def insert_robot do
-  Repo.insert!(%Robot{
-    name: name_list |> Enum.random(),
-    fuel_level: fuel_level_list |> Enum.random()
-  })
-# end
+  def seed() do
+    for n <- @robot_names, do: Robots.create_robot(%{name: n})
+  end
 
-# def clear() do
-  # Repo.delete_all()
-# end
-
-# end
+  def clear() do
+    Repo.delete_all(Robot)
+  end
+end
