@@ -2,6 +2,10 @@ defmodule Hello.Robots do
   alias Hello.Repo
   alias Hello.Robots.Robot
 
+  with {:ok, list} <- :application.get_key(:hello, :modules) do
+    IO.inspect(list)
+  end
+
   def create_robot(attrs \\ %{}) do
     %Robot{}
     |> Robot.changeset(attrs)

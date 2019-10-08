@@ -5,17 +5,14 @@ defmodule Hello.Robots.Robot do
   schema "robots" do
     field :name, :string, default: ""
     field :fuel_level, :integer, default: 0
-    field :image_url, :string, default: "https://robohash.org/robot"
-
     timestamps()
   end
 
   @doc false
   def changeset(robot, attrs) do
     robot
-    |> cast(attrs, [:name, :fuel_level, :image_url])
-    |> validate_required([:name, :fuel_level, :image_url])
-    # Check to confirm this is right:
+    |> cast(attrs, [:name, :fuel_level])
+    |> validate_required([:name, :fuel_level])
     |> validate_inclusion(:fuel_level, 0..100)
   end
 end
