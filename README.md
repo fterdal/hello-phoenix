@@ -26,3 +26,9 @@ Clean up the _build cache:
 ```sh
 mix do clean
 ```
+
+Observer (A fancy GUI for your Erlang runtime):
+```sh
+iex -S mix
+iex(1)> :observer.start()
+```
