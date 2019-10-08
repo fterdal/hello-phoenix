@@ -4,7 +4,6 @@ defmodule Mix.Tasks.Seed do
   use Mix.Task
   alias Hello.DatabaseSeeder
 
-  @shortdoc "Simply calls the Hello.say/0 function."
   def run(_) do
     # calling our Hello.say() function from earlier
 

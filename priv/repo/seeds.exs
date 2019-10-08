@@ -29,12 +29,11 @@ defmodule Hello.DatabaseSeeder do
   end
 
   def seed do
-    IO.puts("SEEDING DATABASE...")
     clear()
+    IO.puts("SEEDING DATABASE...")
     for n <- @robot_names, do: Robots.create_robot(%{name: n})
   end
 
-  # def run(_) do
-  #   seed()
-  # end
 end
+
+Hello.DatabaseSeeder.seed()
