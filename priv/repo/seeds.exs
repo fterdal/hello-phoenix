@@ -13,6 +13,7 @@
 defmodule Hello.DatabaseSeeder do
   alias Hello.Repo
   alias Hello.Robots
+  alias Hello.Robots.Robot
 
   @robot_names [
     "Finn",
@@ -22,11 +23,18 @@ defmodule Hello.DatabaseSeeder do
     "Holly"
   ]
 
-  def seed() do
+  def clear do
+    IO.puts("CLEARING DATABASE...")
+    Repo.delete_all(Robot)
+  end
+
+  def seed do
+    IO.puts("SEEDING DATABASE...")
+    clear()
     for n <- @robot_names, do: Robots.create_robot(%{name: n})
   end
 
-  def clear() do
-    Repo.delete_all(Robot)
-  end
+  # def run(_) do
+  #   seed()
+  # end
 end
