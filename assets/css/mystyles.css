@@ -4,6 +4,10 @@
 
 }
 
+h1 {
+  text-align: center;
+}
+
 .top-nav-ul li {
   margin: 0 1em;
   display: block;
@@ -17,16 +21,21 @@ header section :first-child,:last-child {
 .robot-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-.robot-list li {
-  display: block;
-  border: 1px solid black;
-  margin: 0 1em;
-  padding: 0.5em 0.5em 0em 0.5em;
-}
-
-.robot-list img {
+.robot-list-item img {
   max-width: 150px;
   max-height: 150px;
 }
+
+.robot-list-item {
+  display: block;
+  border: 1px solid black;
+  margin: 1em;
+  padding: 0.5em 0.5em 0em 0.5em;
+}
+.robot-list-item div {
+  text-align: center;
+}
+

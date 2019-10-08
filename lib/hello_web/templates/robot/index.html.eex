@@ -1,11 +1,14 @@
 <h1>All Robots</h1>
 <ul class="robot-list">
-    <%= for robot <- @robots do %>
-      <li>
-        <div><%= robot.name %></div>
-        <img src="<%= robot.image_url %>" />
-      </li>
-    <% end %>
+  <%= for robot <- @robots do %>
+    <li class="robot-list-item">
+      <div>
+        <b><%= robot.id  %> - </b>
+        <%= robot_name(robot) %>
+      </div>
+      <%= robot_image(robot) %>
+    </li>
+  <% end %>
 </ul>
 
 <script>
@@ -13,7 +16,6 @@
     <%= for robot <- @robots do %>
       {
         name: "<%= robot.name %>",
-        imageUrl: "<%= robot.image_url %>",
         fuelLevel: <%= robot.fuel_level %>,
       },
     <% end %>
