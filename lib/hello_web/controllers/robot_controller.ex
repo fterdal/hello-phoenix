@@ -17,6 +17,8 @@ defmodule HelloWeb.RobotController do
 
   def create(conn, %{"robot" => robot_params}) do
     Robots.create_robot(robot_params)
-    redirect(conn, to: "/robots")
+    conn
+    |> put_flash(:info, "Robot created successfully.")
+    |> redirect(to: "/robots")
   end
 end
