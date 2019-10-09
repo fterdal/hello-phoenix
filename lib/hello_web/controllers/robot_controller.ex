@@ -11,7 +11,7 @@ defmodule HelloWeb.RobotController do
 
   def show(conn, %{"id" => id}) do
     robot = Robots.get_robot(id)
-    render(conn, "index.html", robots: [robot])
+    render(conn, "show.html", robot: robot)
   end
 
   def new(conn, _params) do
