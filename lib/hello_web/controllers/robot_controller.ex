@@ -16,7 +16,6 @@ defmodule HelloWeb.RobotController do
   end
 
   def create(conn, %{"robot" => robot_params}) do
-    # TODO: How does this even work?
     Robots.create_robot(robot_params)
     redirect(conn, to: "/robots")
   end

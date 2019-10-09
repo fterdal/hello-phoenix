@@ -1,7 +1,6 @@
 .top-nav-ul {
   display: flex;
   flex-direction: row;
-
 }
 
 h1 {
@@ -14,7 +13,8 @@ h1 {
 }
 
 /* Overrides the styles in phoenix.css */
-header section :first-child,:last-child {
+header section :first-child,
+:last-child {
   order: inherit;
 }
 
@@ -39,21 +39,22 @@ header section :first-child,:last-child {
   text-align: center;
 }
 
-/* .new-robot-form {
+.new-robot-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
 .new-robot-form div {
   display: flex;
   align-content: space-between;
   align-items: center;
   margin-bottom: 1em;
 }
-
 .new-robot-form input {
   margin: 0 1em;
   text-align: center;
   font-size: large;
-} */
+}
+.new-robot-form button {
+  align-self: center;
+}

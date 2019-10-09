@@ -8,13 +8,13 @@
   <button type="submit">Submit</button>
 </form> %>
 
-<%= form_for @changeset, robot_path(@conn, :create), fn f -> %>
-
-  <%= label f, :name %>
-  <%= text_input f, :name %>
-  <%= error_tag f, :name %>
+<%= form_for @changeset, robot_path(@conn, :create), [class: "new-robot-form"],  fn f -> %>
 
   <div>
-    <%= submit "Submit" %>
+    <%= label f, :name %>
+    <%= text_input f, :name %>
+    <%= error_tag f, :name %>
   </div>
+
+  <%= submit "Submit" %>
 <% end %>
