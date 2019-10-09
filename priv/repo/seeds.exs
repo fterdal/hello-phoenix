@@ -15,12 +15,14 @@ defmodule Hello.DatabaseSeeder do
   alias Hello.Robots
   alias Hello.Robots.Robot
 
-  @robot_names [
-    "Finn",
-    "Ryan",
-    "Collin",
-    "Priti",
-    "Holly"
+  @robots [
+    %{ name: "Finn", fuel_level: 87 },
+    %{ name: "Ryan", fuel_level: 50 },
+    %{ name: "Collin", fuel_level: 12 },
+    %{ name: "Priti", fuel_level: 5 },
+    %{ name: "Holly", fuel_level: 99 },
+    %{ name: "Ben", fuel_level: 74 },
+    %{ name: "Brett", fuel_level: 26 },
   ]
 
   def clear do
@@ -31,7 +33,7 @@ defmodule Hello.DatabaseSeeder do
   def seed do
     clear()
     IO.puts("SEEDING DATABASE...")
-    for n <- @robot_names, do: Robots.create_robot(%{name: n})
+    for n <- @robots, do: Robots.create_robot(n)
   end
 
 end
