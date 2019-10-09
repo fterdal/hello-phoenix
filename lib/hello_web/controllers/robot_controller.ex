@@ -9,10 +9,23 @@ defmodule HelloWeb.RobotController do
     render(conn, "index.html", robots: robots)
   end
 
+  # TODO: Create a Not Found page to instead of redirecting with flash
   def show(conn, %{"id" => id}) do
-    robot = Robots.get_robot(id)
-    render(conn, "show.html", robot: robot)
+    case Robots.get_robot(id) do
+      %Robot{} = robot ->
+        render(conn, "show.html", robot: robot)
+
+      nil ->
+        conn
+        |> put_flash(:error, "Robot id #{id} not found")
+        |> redirect(to: "/robots")
+    end
   end
+
+  # def show(conn, %{"id" => id}) do
+  #   robot = Robots.get_robot(id)
+  #   render(conn, "show.html", robot: robot)
+  # end
 
   def new(conn, _params) do
     changeset = Robot.changeset(%Robot{}, %{})

@@ -4,3 +4,5 @@
   <meter name="fuel-level" min="0" value="<%= @robot.fuel_level %>" low="25" optimum="100" high="75" max="100"></meter>
   <%= robot_image(@robot) %>
 </div>
+
+<%= link "< Back", to: Routes.robot_path(@conn, :index) %>
