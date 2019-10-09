@@ -39,7 +39,7 @@ header section :first-child,:last-child {
   text-align: center;
 }
 
-.new-robot-form {
+/* .new-robot-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,4 +56,4 @@ header section :first-child,:last-child {
   margin: 0 1em;
   text-align: center;
   font-size: large;
-}
+} */

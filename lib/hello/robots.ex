@@ -12,6 +12,10 @@ defmodule Hello.Robots do
     |> Repo.insert()
   end
 
+  # def change_robot(%Robot{} = robot) do
+  #   Robot.changeset(robot, %{})
+  # end
+
   def get_robot(id) do
     Repo.get(Robot, id)
   end

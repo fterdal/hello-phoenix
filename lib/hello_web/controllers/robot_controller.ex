@@ -1,7 +1,8 @@
 defmodule HelloWeb.RobotController do
   use HelloWeb, :controller
+
   alias Hello.Robots
-  # alias Hello.Robots.Robot
+  alias Hello.Robots.Robot
 
   def index(conn, _params) do
     robots = Robots.list_robots()
@@ -10,11 +11,13 @@ defmodule HelloWeb.RobotController do
 
   def new(conn, _params) do
     # TODO: Make a changeset and pass it to the template here
-    render(conn, "new.html", %{})
+    changeset = Robot.changeset(%Robot{}, %{})
+    render(conn, "new.html", changeset: changeset)
   end
 
-  def tomato(conn, _params) do
-    # TODO: Make a changeset and pass it to the template here
-    render(conn, "form.html", %{})
+  def create(conn, %{"robot" => robot_params}) do
+    # TODO: How does this even work?
+    Robots.create_robot(robot_params)
+    redirect(conn, to: "/robots")
   end
 end

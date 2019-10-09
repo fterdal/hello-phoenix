@@ -17,15 +17,7 @@ defmodule HelloWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    resources "/robots", RobotController, only: [:index, :new]
-
-    # get "/potato",
-    #     (defmodule SillyModule do
-    #        def potato(conn, _others) do
-    #          send_resp(conn, 200, "Hello from the potato")
-    #        end
-    #      end),
-    #     :potato
+    resources "/robots", RobotController, only: [:index, :new, :create]
   end
 
   # Other scopes may use custom stacks.
