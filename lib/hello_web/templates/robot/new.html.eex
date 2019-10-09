@@ -8,7 +8,7 @@
   <button type="submit">Submit</button>
 </form> %>
 
-<%= form_for @changeset, robot_path(@conn, :create), [class: "new-robot-form"],  fn f -> %>
+<%= form_for @changeset, Routes.robot_path(@conn, :create), [class: "new-robot-form"],  fn f -> %>
 
   <div>
     <%= label f, :name %>
@@ -18,3 +18,5 @@
 
   <%= submit "Submit" %>
 <% end %>
+
+<%= link "< Back", to: Routes.robot_path(@conn, :index) %>
