@@ -14,6 +14,7 @@
           <ul class="top-nav-ul">
             <li><a href="/">Home</a></li>
             <li><a href="/robots">All Robots</a></li>
+            <li><a href="/robots/new">New Robot</a></li>
           </ul>
         </nav>
       </section>

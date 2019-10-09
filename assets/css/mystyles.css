@@ -39,3 +39,21 @@ header section :first-child,:last-child {
   text-align: center;
 }
 
+.new-robot-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.new-robot-form div {
+  display: flex;
+  align-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.new-robot-form input {
+  margin: 0 1em;
+  text-align: center;
+  font-size: large;
+}
