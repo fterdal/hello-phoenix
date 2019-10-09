@@ -1,13 +1,15 @@
 <h1>All Robots</h1>
 <ul class="robot-list">
   <%= for robot <- @robots do %>
-    <li class="robot-list-item">
-      <div>
-        <b><%= robot.id  %> - </b>
-        <%= robot_name(robot) %>
-      </div>
-      <%= robot_image(robot) %>
-    </li>
+    <%= link to: Routes.robot_path(@conn, :show, robot.id) do %>
+      <li class="robot-list-item">
+        <div>
+          <b><%= robot.id  %> - </b>
+          <%= robot_name(robot) %>
+        </div>
+        <%= robot_image(robot) %>
+      </li>
+    <% end %>
   <% end %>
 </ul>
 

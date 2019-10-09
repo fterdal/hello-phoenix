@@ -9,14 +9,19 @@ defmodule HelloWeb.RobotController do
     render(conn, "index.html", robots: robots)
   end
 
+  def show(conn, %{"id" => id}) do
+    robot = Robots.get_robot(id)
+    render(conn, "show.html", robot: robot)
+  end
+
   def new(conn, _params) do
-    # TODO: Make a changeset and pass it to the template here
     changeset = Robot.changeset(%Robot{}, %{})
     render(conn, "new.html", changeset: changeset)
   end
 
   def create(conn, %{"robot" => robot_params}) do
     Robots.create_robot(robot_params)
+
     conn
     |> put_flash(:info, "Robot created successfully.")
     |> redirect(to: "/robots")

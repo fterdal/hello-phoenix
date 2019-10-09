@@ -58,3 +58,13 @@ header section :first-child,
 .new-robot-form button {
   align-self: center;
 }
+
+.single-robot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+meter {
+  width: 66%;
+}

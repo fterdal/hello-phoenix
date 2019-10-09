@@ -17,7 +17,7 @@ defmodule HelloWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    resources "/robots", RobotController, only: [:index, :new, :create]
+    resources "/robots", RobotController, only: [:index, :new, :create, :show]
   end
 
   # Other scopes may use custom stacks.

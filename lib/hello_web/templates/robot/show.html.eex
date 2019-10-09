@@ -1,0 +1,6 @@
+<div class="single-robot">
+  <h1><%= robot_name(@robot) %></h1>
+  <label for="fuel-level">Fuel: <%= @robot.fuel_level %></label>
+  <meter name="fuel-level" min="0" value="<%= @robot.fuel_level %>" low="10" optimum="50" high="90" max="100"></meter>
+  <%= robot_image(@robot) %>
+</div>
