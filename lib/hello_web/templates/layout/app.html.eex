@@ -17,6 +17,9 @@
             <li><a href="/robots/new">New Robot</a></li>
           </ul>
         </nav>
+        <a href="https://github.com/fterdal/hello-phoenix">
+          <img class="github-logo" src="<%= Routes.static_path(@conn, "/images/GitHub-Mark-64px.png") %>" alt="Phoenix Framework Logo"/>
+        </a>
       </section>
     </header>
     <main role="main" class="container">
