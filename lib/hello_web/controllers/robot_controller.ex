@@ -9,6 +9,11 @@ defmodule HelloWeb.RobotController do
     render(conn, "index.html", robots: robots)
   end
 
+  def show(conn, %{"id" => id}) do
+    robot = Robots.get_robot(id)
+    render(conn, "index.html", robots: [robot])
+  end
+
   def new(conn, _params) do
     changeset = Robot.changeset(%Robot{}, %{})
     render(conn, "new.html", changeset: changeset)
