@@ -22,11 +22,6 @@ defmodule HelloWeb.RobotController do
     end
   end
 
-  # def show(conn, %{"id" => id}) do
-  #   robot = Robots.get_robot(id)
-  #   render(conn, "show.html", robot: robot)
-  # end
-
   def new(conn, _params) do
     changeset = Robot.changeset(%Robot{}, %{})
     render(conn, "new.html", changeset: changeset)
@@ -38,5 +33,22 @@ defmodule HelloWeb.RobotController do
     conn
     |> put_flash(:info, "Robot created successfully.")
     |> redirect(to: "/robots")
+  end
+
+  def delete(conn, %{"id" => id}) do
+    IO.puts("DELETING ROBOT #{id}")
+    case Robots.get_robot(id) do
+      %Robot{} = robot ->
+        Robots.delete_robot(robot)
+
+        conn
+        |> put_flash(:info, "Robot deleted successfully.")
+        |> redirect(to: "/robots")
+
+      nil ->
+        conn
+        |> put_flash(:error, "Robot id #{id} not found")
+        |> redirect(to: "/robots")
+    end
   end
 end

@@ -1,8 +1,9 @@
 <div class="single-robot">
   <h1><%= robot_name(@robot) %></h1>
   <label for="fuel-level">Fuel: <%= @robot.fuel_level %>%</label>
-  <meter name="fuel-level" min="0" value="<%= @robot.fuel_level %>" low="25" optimum="100" high="75" max="100"></meter>
+  <meter class="robot-fuel-level" name="fuel-level" min="0" value="<%= @robot.fuel_level %>" low="25" optimum="100" high="75" max="100"></meter>
   <%= robot_image(@robot) %>
+  <%= button("delete", to: Routes.robot_path(@conn, :delete, @robot.id), method: "delete", class: "delete-robot") %>
 </div>
 
 <%= link "< Back", to: Routes.robot_path(@conn, :index) %>

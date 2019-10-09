@@ -19,4 +19,8 @@ defmodule Hello.Robots do
   def list_robots() do
     Repo.all(Robot)
   end
+
+  def delete_robot(%Robot{} = robot) do
+    Repo.delete(robot)
+  end
 end
